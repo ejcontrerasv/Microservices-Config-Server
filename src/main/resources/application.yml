@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ejcontrerasv/Configuration-Services.git
+          repos:
+            developoment:
+              pattern:
+                - '*service/dev'
+                - '*service/prod'
+              uri: https://github.com/ejcontrerasv/Configuration-Services.git
+              cloneOnStart: true
+            staging:
+              pattern:
+                - '*server/dev'
+                - '*server/prod'
+              uri: https://github.com/ejcontrerasv/Configuration-Servers.git
+              cloneOnStart: true
